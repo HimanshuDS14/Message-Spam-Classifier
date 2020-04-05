@@ -15,7 +15,7 @@ app = Flask(__name__ , static_url_path='/static')
 def home():
     return render_template('index.html')
 
-@app.route('/predict' , methods = ["POST"])
+@app.route('/predict' , methods = ["POST" , "GET"])
 def predict():
     data = pd.read_csv("spam.csv", encoding="latin-1")
     data.drop(["Unnamed: 2", "Unnamed: 3", "Unnamed: 4"], axis=1, inplace=True)
